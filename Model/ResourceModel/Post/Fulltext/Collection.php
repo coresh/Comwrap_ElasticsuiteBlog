@@ -1,7 +1,6 @@
 <?php
 namespace Comwrap\ElasticsuiteBlog\Model\ResourceModel\Post\Fulltext;
 
-use Magento\Framework\DB\Select;
 use Smile\ElasticsuiteCore\Search\RequestInterface;
 use Smile\ElasticsuiteCore\Search\Request\BucketInterface;
 
@@ -102,7 +101,7 @@ class Collection extends \Magefan\Blog\Model\ResourceModel\Post\Collection
     /**
      * {@inheritDoc}
      */
-    public function setOrder($attribute, $dir = Select::SQL_DESC)
+    public function setOrder($field, $direction = self::SORT_ORDER_DESC)
     {
         throw new \LogicException("Sorting on multiple stores is not allowed in search engine collections.");
     }
